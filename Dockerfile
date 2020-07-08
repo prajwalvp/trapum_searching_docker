@@ -16,6 +16,7 @@ RUN git clone https://github.com/ewanbarr/dedisp.git && \
 
 RUN git clone https://github.com/prajwalvp/peasoup_32.git && \
     cd peasoup_32 && \
+    git checkout user_dm && \
     make -j 32 && \
     make install 
    
