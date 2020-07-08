@@ -1,10 +1,9 @@
 FROM nvidia/cuda:8.0-devel-ubuntu16.04
 
-
 RUN apt-get update &&\
     apt-get install -y --no-install-recommends \
-    git \   
-    ca-certificates
+    ca-certificates \
+    git 
 
 WORKDIR /software/
 
@@ -16,7 +15,7 @@ RUN git clone https://github.com/ewanbarr/dedisp.git && \
 
 RUN git clone https://github.com/prajwalvp/peasoup_32.git && \
     cd peasoup_32 && \
-    git checkout user_dm && \
+    git checkout user_dm &&\
     make -j 32 && \
     make install 
    
@@ -59,8 +58,8 @@ RUN pip install git+https://github.com/pravirkr/sigpyproc3
 
 RUN pip install xxhash && \
     pip install pika && \
-    pip install sqlalchemy  && \
     pip install pymysql && \
+    pip install sqlalchemy  && \
     pip install sqlacodegen && \
     pip install mysqlclient 
 
@@ -81,6 +80,15 @@ RUN git clone https://gitlab.com/kmrajwade/iqrm_apollo.git && \
     make -j
 ENV PATH $PATH:/software/iqrm_apollo/build/iqrm_apollo
 
+
+# Add pipeline wrapper to pythonpath
+ENV PYTHONPATH $PYTHONPATH:/software/trapum-pipeline-wrapper:/software/trapum-pipeline-wrapper/utils
+
+# Add digifil libraries to library path
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/software/trapum-pipeline-wrapper/utils/digifil_libs
+
+# Add utils to $PATH
+ENV PATH $PATH:/software/trapum-pipeline-wrapper/utils
 
 # ft_scrunch 
 RUN pip3 install pyyaml
