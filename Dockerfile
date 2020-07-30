@@ -58,7 +58,6 @@ RUN pip install xxhash && \
 
 RUN git clone https://github.com/MPIfR-BDG/trapum-pipeline-wrapper.git && \
     cd trapum-pipeline-wrapper && \
-    git checkout peasoup32_wrapper 
 
 
 # IQRM 
