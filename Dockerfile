@@ -22,7 +22,7 @@ RUN git clone https://github.com/ewanbarr/peasoup.git && \
 RUN ldconfig /usr/local/lib
 
 
-RUN apt-get install -y --no-install-recommends build-essential git curl wget make cmake fftw3 fftw3-dev pkg-config libomp-dev libmysqlclient-dev numactl
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential git curl wget make cmake fftw3 fftw3-dev pkg-config libomp-dev libmysqlclient-dev numactl
 
 
 # Python3.6 stuff
