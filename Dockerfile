@@ -13,9 +13,9 @@ RUN git clone https://github.com/ewanbarr/dedisp.git && \
     make -j 32 && \
     make install 
 
-RUN git clone https://github.com/prajwalvp/peasoup_32.git && \
-    cd peasoup_32 && \
-    git checkout user_dm &&\
+RUN git clone https://github.com/ewanbarr/peasoup.git && \
+    cd peasoup && \
+    git checkout vivek_updates &&\
     make -j 32 && \
     make install 
    
