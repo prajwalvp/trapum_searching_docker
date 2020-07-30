@@ -56,8 +56,7 @@ RUN pip install xxhash && \
     pip install sqlacodegen && \
     pip install mysqlclient 
 
-RUN git clone https://github.com/MPIfR-BDG/trapum-pipeline-wrapper.git && \
-    cd trapum-pipeline-wrapper && \
+RUN git clone https://github.com/MPIfR-BDG/trapum-pipeline-wrapper.git 
 
 
 # IQRM 
