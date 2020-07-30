@@ -24,13 +24,6 @@ RUN ldconfig /usr/local/lib
 
 RUN apt-get install -y --no-install-recommends build-essential git curl wget make cmake fftw3 fftw3-dev pkg-config libomp-dev libmysqlclient-dev numactl
 
-#RUN pip install pika
-#RUN pip install mysqlclient
-
-# Install sigpyproc
-#RUN git clone https://github.com/ewanbarr/sigpyproc.git
-#WORKDIR /software/sigpyproc
-#RUN python setup.py install
 
 # Python3.6 stuff
 RUN apt-get update && \
@@ -58,8 +51,8 @@ RUN pip install git+https://github.com/pravirkr/sigpyproc3
 
 RUN pip install xxhash && \
     pip install pika && \
-    pip install pymysql && \
     pip install sqlalchemy  && \
+    pip install pymysql && \
     pip install sqlacodegen && \
     pip install mysqlclient 
 
